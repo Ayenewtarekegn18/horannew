@@ -1,0 +1,66 @@
+.partners-section {
+  height: 100px;
+  overflow: hidden;
+  position: relative; /* Required for shadows */
+  padding: 0 60px; /* Left and right padding for the fade-in and fade-out effect */
+}
+
+.partners-section::before,
+.partners-section::after {
+  content: "";
+  position: absolute;
+  width: 60px; /* Width of the fade effect */
+  height: 100%;
+  top: 0; 
+
+}
+ 
+ 
+ 
+.logo-container {
+  margin: 0 25px; /* Adjust the margin for equal padding between logos */
+  position: relative; /* Required for shadows */
+}
+
+.logo {
+  height: 160px; /* Set the fixed height */
+  width: 150px; /* Set the fixed width */
+  display: block;
+  object-fit: cover; /* Crop the image to cover the entire box */
+  object-position: center; /* Center the image within the box */
+  filter: grayscale(100%) brightness(0.2); /* Change color to dark grey */
+}
+
+
+/* Shadows */
+.logo::before,
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+}
+
+.logo::before {
+  left: 25px; /* Adjust the position of the shadow */
+}
+
+.logo::after {
+  right: 25px; /* Adjust the position of the shadow */
+}
+
+
+.container {
+  padding: 0 14%; /* Adjust the percentage as needed for larger padding */
+}
+
+.description {
+  margin-top: 10px; /* Add margin-top 10px */
+  text-align: center; /* Align text center */
+  font-size: 36px; /* Set font size */
+  font-weight: 400; /* Set font weight */
+  font-family: 'Poppins', sans-serif; /* Set font family */
+  font-style: normal;
+  /* Line Height 43px */
+  line-height: 43px;
+}
