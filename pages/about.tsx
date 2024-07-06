@@ -54,14 +54,14 @@ const AboutUs = () => {
         textAlign="center"
         margin={isMobile ? "6rem 5rem 5rem 5rem" : "6rem 10rem 5rem 10rem"}
       >
-        <span style={{ color: "white" }}>We know what's going on. </span>
+        <span style={{ color: "white" }}>We know what&apos;s going on. </span>
         <span style={{ color: "grey" }}>Horan software, an innovative Ethiopian startup,</span>
         <span style={{ color: "grey" }}>revolutionizing the digital landscape. Our name Horan </span>
         <span style={{ color: "white" }}>signifies Productivity and Prosperity through hard work</span>
         <span style={{ color: "grey" }}>in Afaan Oromo. Pioneering Information and Communication technologies,</span>
         <span style={{ color: "white" }}>Horan has created the first Student Social Network app in Ethiopian</span>
         <span style={{ color: "grey" }}> Universities, fostering student connections and knowledge-sharing. With over 4 thousand online communities</span>
-        <span style={{ color: "white" }}>For years, we've been the go-to partner for businesses</span>
+        <span style={{ color: "white" }}>For years, we&apos;ve been the go-to partner for businesses</span>
         <span style={{ color: "grey" }}>seeking to enhance their digital presence.</span>
       </Text>
 

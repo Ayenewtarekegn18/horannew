@@ -179,7 +179,7 @@ const Attributes = () => {
                 Scable as You Grow
               </Text>
               <Text color="white" fontWeight="light" textAlign= "center" mb = "-1" >
-                We're ready to meet your evolving needs
+                We&apos;re ready to meet your evolving needs
               </Text>
             </Box>
         
