@@ -21,7 +21,7 @@ import { FocusableElement } from "@saas-ui/react-utils";
 import { ButtonLink } from "components/button-link/button-link";
 import { Card, CardBody, CardHeader, CardFooter } from "@chakra-ui/react";
 import { FallInPlace } from "components/motion/fall-in-place";
-const   contact = () => {
+const Contact = () => {
 
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
@@ -146,4 +146,4 @@ const   contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
