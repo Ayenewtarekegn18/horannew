@@ -3,8 +3,7 @@ import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import weakMemoize from '@emotion/weak-memoize'
 import { FrameContextConsumer, useFrame } from 'react-frame-component'
-import { SaasProvider } from '@saas-ui/react'
-import theme from '../../../../styles/theme'
+import { SaasProvider, theme } from '@saas-ui/react'
 import { ColorMode, GlobalStyle, useColorMode } from '@chakra-ui/system'
 
 let memoizedCreateCacheWithContainer = weakMemoize((container: Node) => {

@@ -11,7 +11,6 @@ import { ImNpm } from 'react-icons/im'
 import { FaYarn } from 'react-icons/fa'
 import { SiPnpm } from 'react-icons/si'
 
-import CodeBlock from './codeblock/codeblock'
 
 type PackageManagerName = 'npm' | 'yarn' | 'pnpm'
 
@@ -69,9 +68,7 @@ export function PackageManagers(props: {
           if (!command[name]) return null
           return (
             <TabPanel key={name} p="0" mt="-4">
-              <CodeBlock>
-                <Box className="language-bash">{command[name]}</Box>
-              </CodeBlock>
+           
             </TabPanel>
           )
         })}

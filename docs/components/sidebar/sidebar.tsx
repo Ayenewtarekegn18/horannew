@@ -15,8 +15,8 @@ import {
   Center,
   Container,
 } from '@chakra-ui/react'
-import { Routes, RouteItem } from '@/docs/utils/get-route-context'
-import { convertBackticksToInlineCode } from '@/docs/utils/convert-backticks-to-inline-code'
+import { Routes, RouteItem } from '../../utils/get-route-context'
+import { convertBackticksToInlineCode } from '../../utils/convert-backticks-to-inline-code'
 import SidebarCategory from './sidebar-category'
 import SidebarLink from './sidebar-link'
 

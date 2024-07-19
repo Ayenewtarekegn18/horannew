@@ -5,7 +5,7 @@ export function removeFromLast(path: string, key: string) {
   return index === -1 ? path : path.substring(0, index)
 }
 
-export function findRouteByPath(path: string, routes: RouteItem[]): RouteItem {
+export function findRouteByPath(path: string, routes: RouteItem[]): RouteItem | undefined {
   for (const route of routes) {
     if (route.path && removeFromLast(route.path, '.') === path) {
       return route
@@ -17,4 +17,6 @@ export function findRouteByPath(path: string, routes: RouteItem[]): RouteItem {
       return childPath
     }
   }
+
+  return undefined; // Add a return statement at the end of the function
 }

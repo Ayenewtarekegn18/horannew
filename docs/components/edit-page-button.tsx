@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { chakra, Icon, Stack, Link } from '@chakra-ui/react'
 import { MdEdit } from 'react-icons/md'
-import { t } from '@/docs/utils/i18n'
+import { t } from 'docs/utils/i18n'
 
 const EditPageLink: React.FC<{ href?: string }> = ({ href }) => {
   return (

@@ -7,7 +7,7 @@ export function getTableOfContents(mdxContent: string) {
   const regexp = new RegExp(/^(### |## )(.*)\n/, 'gm')
   // @ts-ignore
   const headings = [...mdxContent.matchAll(regexp)]
-  let tableOfContents = []
+  let tableOfContents: { text: string; id: string; level: string; }[] = []
 
   if (headings.length) {
     tableOfContents = headings.map((heading) => {

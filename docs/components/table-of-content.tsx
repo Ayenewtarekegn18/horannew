@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useScrollSpy } from '@/hooks/use-scrollspy'
+import { useScrollSpy } from 'hooks/use-scrollspy'
 import {
   Box,
   ListItem,
@@ -9,8 +9,8 @@ import {
   useColorModeValue,
   BoxProps,
 } from '@chakra-ui/react'
-import { Heading } from '@/docs/components/page-container'
-import { t } from '@/docs/utils/i18n'
+import { Heading } from '../components/page-container'
+import { t } from '../utils/i18n'
 
 interface TableOfContentProps extends BoxProps {
   headings: Heading[]

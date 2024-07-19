@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+{/**import dynamic from 'next/dynamic'
 import * as Chakra from '@chakra-ui/react'
 import {
   ColorPalette,
@@ -174,3 +174,4 @@ export const MDXComponents = {
   Tweet,
   PackageManagers,
 }
+*/}

@@ -1,4 +1,4 @@
-import { Box, BoxProps } from '@chakra-ui/react'
+{/**import { Box, BoxProps } from '@chakra-ui/react'
 import { Language } from 'prism-react-renderer'
 import Highlight from '../../docs/components/mdx-components/codeblock/highlight'
 
@@ -30,3 +30,4 @@ const CodePanel: React.FC<CodePanelProps> = ({
 }
 
 export default CodePanel
+*/}

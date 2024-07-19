@@ -1,18 +1,19 @@
-import { allDocs, Doc } from 'contentlayer/generated'
+//import { Doc } from 'contentlayer/generated'
+//import { allDocs } from 'contentlayer'
 
 import { MixedArray, toArray, uniq } from './js-utils'
 
-export function getDocByType(id: string) {
+/**export function getDocByType(id: string) {
   return allDocs.filter((doc) => {
     return doc.slug.startsWith(`/docs/${id}`)
   })
-}
+}*/
 
 function toCapitalized(str: string) {
   const result = str.charAt(0).toUpperCase() + str.slice(1)
   return result.replace(/-/g, ' ')
 }
-
+/** 
 export function getGroupedComponents() {
   return getDocByType('components').reduce(
     (acc, doc) => {
@@ -70,7 +71,7 @@ export const getDocDoc = (slug: MixedArray): Doc | undefined => {
 
   return doc
 }
-
+*/
 export type TabsData = ReturnType<typeof getComponentTabsData>
 
 export function getComponentTabsData(slug: MixedArray) {
@@ -86,7 +87,7 @@ export function getComponentTabsData(slug: MixedArray) {
   const usageSlug = getSlug('usage')
   const propsSlug = getSlug('props')
   const themingSlug = getSlug('theming')
-
+/** 
   const data = [
     {
       id: 'usage',
@@ -112,3 +113,5 @@ export function getComponentTabsData(slug: MixedArray) {
   ]
   return data.filter((item) => item.doc)
 }
+
+*/}

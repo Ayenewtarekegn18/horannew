@@ -1,3 +1,5 @@
+{/**
+  
 import { Box, useBoolean, useColorModeValue } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import prismTheme from 'prism-react-renderer/themes/shadesOfPurple'
@@ -13,7 +15,7 @@ function CodeBlock(props) {
   useEffect(
     /**
      * Lazily-load <ReactLiveBlock /> to save bundle size.
-     */
+     
     on,
     [on]
   )
@@ -82,3 +84,5 @@ function CodeBlock(props) {
 }
 
 export default CodeBlock
+
+*/}

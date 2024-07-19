@@ -1,6 +1,6 @@
 import { isObject } from '@chakra-ui/utils'
 
-import { InlineCode } from '@/docs/components/mdx-components/inline-code'
+import { InlineCode } from '../components/mdx-components/inline-code'
 
 /**
  * Replace the code blocks wrapped in backticks

@@ -1,4 +1,4 @@
-import {
+{/**import {
   Box,
   BoxProps,
   Button,
@@ -16,18 +16,18 @@ import {
   useUpdateEffect,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
-import useRouteChanged from '@/hooks/use-route-changed'
+import useRouteChanged from 'hooks/use-route-changed'
 import { getRoutes } from '@/layouts/mdx'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
-import Logo from '@/components/layout/logo'
+import {Logo} from 'components/layout/logo'
 import { SidebarContent } from './sidebar/sidebar'
-import { t } from '@/docs/utils/i18n'
+//import { t } from '@/docs/utils/i18n'
 
-import headerNav from '@/data/header-nav'
+import {headerNav }from 'data/header-nav'
 
 interface NavLinkProps extends CenterProps {
   label: string
@@ -39,7 +39,7 @@ function NavLink({ href, children, label, isActive, ...rest }: NavLinkProps) {
   const { pathname } = useRouter()
   const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
-  const [, group] = href.split('/')
+  const [, group] = (href ?? '').split('/')
   isActive = isActive ?? pathname.includes(group)
 
   return (
@@ -73,21 +73,21 @@ interface MobileNavContentProps {
 
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose } = props
-  const closeBtnRef = React.useRef<HTMLButtonElement>()
+  const closeBtnRef = React.useRef<HTMLButtonElement>(null)
   const { pathname, asPath } = useRouter()
   const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
 
-  useRouteChanged(onClose)
+  useRouteChanged(onClose ? onClose : (() => {}))
 
   /**
    * Scenario: Menu is open on mobile, and user resizes to desktop/tablet viewport.
    * Result: We'll close the menu
-   */
+   
   const showOnBreakpoint = useBreakpointValue({ base: true, lg: false })
 
   React.useEffect(() => {
     if (showOnBreakpoint == false) {
-      onClose()
+      onClose && onClose()
     }
   }, [showOnBreakpoint, onClose])
 
@@ -205,7 +205,6 @@ export const MobileNavButton = React.forwardRef(
       <IconButton
         ref={ref}
         display={{ base: 'flex', lg: 'none' }}
-        aria-label="Open menu"
         fontSize="20px"
         color={useColorModeValue('gray.800', 'inherit')}
         variant="ghost"
@@ -217,3 +216,5 @@ export const MobileNavButton = React.forwardRef(
 )
 
 MobileNavButton.displayName = 'MobileNavButton'
+
+*/}

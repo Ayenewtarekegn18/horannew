@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 
 function NavLink(props: HTMLChakraProps<'a'>) {
-  const { href, ...rest } = props
+  const { href = "", ...rest } = props
   const { pathname } = useRouter()
 
   const [, group] = href.split('/')

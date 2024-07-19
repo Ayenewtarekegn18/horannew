@@ -1,7 +1,8 @@
-// doesn't support React 17 yet
+{/** 
+  // doesn't support React 17 yet
 
-import { Box, BoxProps, chakra } from '@chakra-ui/react'
-import { FeaturesOptions, FeaturesProvider } from '@saas-ui-pro/feature-flags'
+import { Box, BoxProps } from '@chakra-ui/react'
+import { Box as chakra } from '@chakra-ui/react'
 import {
   LiveProvider,
   LiveEditor,
@@ -17,35 +18,15 @@ import { useEffect, useRef, useState } from 'react'
 import { Splitter } from '@ark-ui/react'
 import Frame from 'react-frame-component'
 import { FrameProvider } from './frame-provider'
+import { features } from 'process'
 
-const features: FeaturesOptions = {
-  segments: [
-    {
-      id: 'admin',
-      attr: [
-        {
-          key: 'role',
-          value: 'admin',
-        },
-      ],
-      features: ['settings', { id: 'value-feature', value: 'enabled' }],
-    },
-    {
-      id: 'proPlan',
-      attr: [
-        {
-          key: 'plan',
-          value: 'pro',
-        },
-      ],
-      features: ['inbox'],
-    },
-  ],
-}
+
+
 
 const LiveCodePreview = chakra(LivePreview, {})
 
 const LiveCodePreviewWrapper = (props: BoxProps) => {
+  const { children, ...rest } = props;
   return (
     <Box
       fontFamily="body"
@@ -54,12 +35,14 @@ const LiveCodePreviewWrapper = (props: BoxProps) => {
       borderRadius="12px"
       fontSize="md"
       overflow="hidden"
-      {...props}
+      {...rest}
     >
-      {props.children}
+      {children}
     </Box>
   )
 }
+
+
 
 const EditableNotice = (props: BoxProps) => {
   return (
@@ -68,7 +51,6 @@ const EditableNotice = (props: BoxProps) => {
       width="full"
       top="-1.25em"
       roundedTop="8px"
-      bg="#2a2734"
       py="2"
       zIndex="0"
       letterSpacing="wide"
@@ -78,7 +60,6 @@ const EditableNotice = (props: BoxProps) => {
       textAlign="center"
       textTransform="uppercase"
       pointerEvents="none"
-      {...props}
     >
       Live edit
     </Box>
@@ -176,70 +157,65 @@ function ReactLiveBlock({
   )
 
   return (
-    <FeaturesProvider value={features}>
-      <LiveProvider {...liveProviderProps}>
+    <LiveProvider {...liveProviderProps}>
+      <Box
+        as={Splitter.Root}
+        display="flex"
+        alignItems="center"
+        defaultSize={[
+          { id: 'a', size: 100, minSize: 40 },
+          { id: 'b', size: 0 },
+        ]}
+        onSizeChangeEnd={() => setResizing(false)}
+      >
+        <Splitter.Panel id="a">
+          <LiveCodePreviewWrapper
+            pointerEvents={isResizing ? 'none' : undefined}
+            height={height || frameHeight}
+            boxSizing="content-box"
+          >
+            {frame}
+          </LiveCodePreviewWrapper>
+        </Splitter.Panel>
         <Box
-          as={Splitter.Root}
-          display="flex"
-          alignItems="center"
-          defaultSize={[
-            { id: 'a', size: 100, minSize: 40 },
-            { id: 'b', size: 0 },
-          ]}
-          onSizeChangeStart={() => setResizing(true)}
-          onSizeChangeEnd={() => setResizing(false)}
-        >
-          <Splitter.Panel id="a">
-            <LiveCodePreviewWrapper
-              pointerEvents={isResizing ? 'none' : undefined}
-              height={height || frameHeight}
-              boxSizing="content-box"
-            >
-              {frame}
-            </LiveCodePreviewWrapper>
-          </Splitter.Panel>
-          <Box
-            as={Splitter.ResizeTrigger}
-            id="a:b"
-            width="4px"
-            bg="muted"
-            mx="2"
-            height="80px"
-            rounded="full"
-            _hover={{
-              bg: 'primary.500',
-            }}
-            _focus={{
-              outline: 'none',
-              bg: 'primary.500',
-            }}
-          />
-          <Splitter.Panel id="b"></Splitter.Panel>
-        </Box>
-        {editable && <LiveError style={liveErrorStyle} />}
-        <Box position="relative" zIndex="0">
-          {editable && (
-            <CodeContainer
-              bg={theme.plain.backgroundColor}
-              sx={{
-                maxHeight: '400px',
-                textarea: {
-                  _focus: {
-                    outline: 'none',
-                  },
+          as={Splitter.ResizeTrigger}
+          id="a:b"
+          width="4px"
+          bg="muted"
+          mx="2"
+          height="80px"
+          rounded="full"
+          _hover={{
+            bg: 'primary.500',
+          }}
+          _focus={{
+            outline: 'none',
+            bg: 'primary.500',
+          }}
+        />
+        <Splitter.Panel id="b"></Splitter.Panel>
+      </Box>
+      {editable && <LiveError style={liveErrorStyle} />}
+      <Box position="relative" zIndex="0">
+        {editable && (
+          <CodeContainer
+            bg={{
+              maxHeight: '400px',
+              textarea: {
+                _focus: {
+                  outline: 'none',
                 },
-              }}
-              overflow="auto"
-            >
-              <LiveEditor style={liveEditorStyle} />
-            </CodeContainer>
-          )}
-          <CopyButton code={editorCode} />
-          {editable && <EditableNotice bg={theme.plain.backgroundColor} />}
-        </Box>
-      </LiveProvider>
-    </FeaturesProvider>
+              },
+            }}
+            overflow="auto"
+          />
+        )}
+        <CopyButton code={editorCode} />
+        {editable && <EditableNotice bg={theme.plain.backgroundColor} />}
+      </Box>
+    </LiveProvider>
   )
 }
 
 export default ReactLiveBlock
+*/}

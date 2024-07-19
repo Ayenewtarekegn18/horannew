@@ -1,4 +1,4 @@
-import { chakra } from '@chakra-ui/react'
+{/**import { Box as chakra } from '@chakra-ui/react'
 import BaseHighlight, {
   defaultProps,
   Language,
@@ -9,13 +9,17 @@ import { liveEditorStyle } from './styles'
 
 const RE = /{([\d,-]+)}/
 
-const calculateLinesToHighlight = (meta: string) => {
-  if (!RE.test(meta)) {
+const calculateLinesToHighlight = (meta?: string) => {
+  if (!RE.test(meta || "")) {
     return () => false
   }
-  const lineNumbers = RE.exec(meta)[1]
+  const match = meta ? RE.exec(meta) : null;
+  if (!match) {
+    return () => false;
+  }
+  const lineNumbers = match[1]
     .split(`,`)
-    .map((v) => v.split(`-`).map((x) => parseInt(x, 10)))
+    .map((v) => v.split(`-`).map((x) => parseInt(x, 10)));
 
   return (index: number) => {
     const lineNumber = index + 1
@@ -56,7 +60,7 @@ function Highlight({
             {tokens.map((line, i) => {
               const lineProps = getLineProps({ line, key: i })
               return (
-                <chakra.div
+                <chakra.div as="div"
                   key={i}
                   px='5'
                   bg={shouldHighlightLine(i) ? 'whiteAlpha.200' : undefined}
@@ -81,3 +85,4 @@ function Highlight({
 }
 
 export default Highlight
+*/}

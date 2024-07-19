@@ -15,8 +15,8 @@ import {
 import { FaNpm, FaGithub, FaYoutube } from 'react-icons/fa'
 import { FiLock } from 'react-icons/fi'
 import StorybookIcon from '../storybook-icon'
-import { t } from '@/docs/utils/i18n'
-import { Version } from '@/components/version'
+import { t } from '../../utils/i18n'
+
 
 type ComponentLinkProps = LinkProps & {
   icon?: React.ElementType
@@ -184,10 +184,7 @@ function ComponentLinks(props: ComponentLinksProps) {
 
   const version = (!!pro || !!npm || props.version) && (
     <WrapItem>
-      <Version
-        version={typeof props.version === 'boolean' ? undefined : props.version}
-        pro={!!pro}
-      />
+      
     </WrapItem>
   )
 

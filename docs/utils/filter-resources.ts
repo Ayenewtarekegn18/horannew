@@ -1,4 +1,4 @@
-import { Resource } from '@/docs/components/resource-card'
+import { Resource } from '../components/resource-card'
 
 /**
  * Wrapper for filtering resources, in the Resources page, by heading, as per initial

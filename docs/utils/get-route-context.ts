@@ -45,7 +45,7 @@ export interface RouteContext {
 }
 
 export const getAllRoutes = (routes: any) => {
-  const allRoutes = []
+  const allRoutes: RouteItem[] = [] // Provide an initial value for the allRoutes array
 
   const traverse = (route: RouteItem) => {
     if (route.routes) {

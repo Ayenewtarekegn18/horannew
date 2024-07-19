@@ -51,7 +51,6 @@ export const HeroSection: React.FC = () => {
         >
           <Stack direction={{ base: "column", lg: "column" }}>
   
-  
             <Hero
               id="home"
               alignItems={{ base: "left", lg: "center" }}
@@ -64,9 +63,13 @@ export const HeroSection: React.FC = () => {
                   fontStyle=""
                   fontSize={{ base: "3.5rem", lg: "4.7rem" }}
                   fontWeight={{ base: "bold", lg: "medium" }}
-                >
+                  
+                  width = "auto"
+                  font-family = "Poppins, Poppins Placeholder, sans-serif"
+                  color =  "var(--token-9ba5df47-566d-4cce-965a-b909bddf5adc, #cccccc);"
+                  >
                   Magic is
-                  <Br /> Born here
+                  <Br /> Born her
                 </FallInPlace>
   
               }
@@ -203,28 +206,28 @@ export const HeroSection: React.FC = () => {
               borderRadius="12" // Apply border radius to the image container
               overflow="hidden" // Hide any overflowing content
               height="200px" // Set specific height for the image container
+              //width="30vw"
               position="absolute"
               display={{ base: "none", lg: "block" }}
               right={{ lg: "60%", xl: "55%" }}
-              width="190px"
+             width="240px"
               margin="0 auto"
-              mt="200"
+              mt="240"
               alignItems="center" // Align the image horizontally to the center
               justifyContent="center" // Align the image vertically to the center
-              mr="320"
+              mr="280"
             >
               <FallInPlace delay={1}>
                 <Box overflow="hidden" height="100%"  >
                   {/* Use next/image component */}
   
                   <Image
-  
                     src="/static/images/endurance_web.webp"
-                    layout="fill" // Use fill layout to cover the specified height
+                    layout="fixed" // Use fill layout to cover the specified height
                     objectFit="cover"
-                    // add border radius 
-  
-  
+                    // add border radius
+                    width={400}
+                    height={362}
                     alt="Endurance Logo"
                     quality={75}
                     priority
@@ -266,10 +269,7 @@ export const HeroSection: React.FC = () => {
             </Box>
           </Stack>
         </Container>
-  
-  
-  
-  
+
       </Box>
     );
   };

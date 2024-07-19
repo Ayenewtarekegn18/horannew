@@ -5,8 +5,10 @@ import {
   useClipboard,
 } from '@chakra-ui/react'
 import { t } from '../../../utils/i18n'
+import { CheckIcon } from '@saas-ui/react'
+import { CopyIcon } from '@chakra-ui/icons'
+;
 
-import { CheckIcon, CopyIcon } from '@chakra-ui/icons'
 
 interface CopyButtonProps extends ButtonProps {
   code: string

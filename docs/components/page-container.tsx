@@ -10,17 +10,17 @@ import {
   Spacer,
 } from '@chakra-ui/react'
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav'
-import EditPageLink from '@/docs/components/edit-page-button'
-import SEO, { SEOProps } from '@/components/seo'
-import TableOfContent from '@/docs/components/table-of-content'
-import { convertBackticksToInlineCode } from '@/docs/utils/convert-backticks-to-inline-code'
+import EditPageLink from './edit-page-button'
+import {SEO, SEOProps } from '../../components/seo/seo'
+import TableOfContent from './table-of-content'
+import { convertBackticksToInlineCode } from '../utils/convert-backticks-to-inline-code'
 import PageTransition from './page-transition'
-import { t } from '@/docs/utils/i18n'
-import { BackgroundGradient } from '@/components/background-gradient'
+import { t } from '../utils/i18n'
+import { BackgroundGradient } from '../../components/background-gradient'
 
 import { formatRelative } from 'date-fns'
 import { DocsFeedback } from './docs-feedback'
-import { SecondaryNav } from './secondary-nav/secondary-nav'
+//import { SecondaryNav } from './secondary-nav/secondary-nav'
 
 function useHeadingFocusOnRouteChange() {
   const router = useRouter()
@@ -114,7 +114,6 @@ function PageContainer(props: PageContainerProps) {
       <SkipNavLink zIndex={20}>
         {t('component.page-container.skip-to-content')}
       </SkipNavLink>
-      <SecondaryNav />
       <BackgroundGradient animate={false} height="80px" opacity={0.2} />
       <Container
         as="main"
