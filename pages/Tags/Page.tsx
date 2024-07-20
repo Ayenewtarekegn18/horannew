@@ -30,7 +30,7 @@ import {
   import Marquee from "react-marquee-slider";
   import styles from './PartnersSection.module.css';
 import { size } from "lodash";
-  const CodePanel = dynamic(() => import('components/code-panel/code-panel'))
+  //const CodePanel = dynamic(() => import('components/code-panel/code-panel'))
   const ComponentShowcase = dynamic(() =>
     import('components/component-showcase').then((mod) => mod.ComponentShowcase)
   )

@@ -28,7 +28,7 @@ import {
   import dynamic from 'next/dynamic';
   import Marquee from "react-marquee-slider";
   import styles from '../PartnersSection.module.css';
-  const CodePanel = dynamic(() => import('components/code-panel/code-panel'))
+  //const CodePanel = dynamic(() => import('components/code-panel/code-panel'))
   const ComponentShowcase = dynamic(() =>
     import('components/component-showcase').then((mod) => mod.ComponentShowcase)
   )
@@ -50,7 +50,7 @@ export const PartnersSection = () => {
     ];
     const logosArray = logos.map((logo, index) => (
       <div key={index} className={styles["logo-container"]}>
-        <img src={logo.src} alt={logo.alt} className={styles.logo} />
+        <Image src={logo.src} alt={logo.alt} className={styles.logo} />
       </div>
     ));
   

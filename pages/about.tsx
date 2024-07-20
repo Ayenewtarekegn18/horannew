@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Text, Image,ControlBoxProps,Box } from "@chakra-ui/react";
+import { Flex, Text, Image,Box } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { motion } from "framer-motion";
 import styles from './PartnersSection.module.css'; // Ensure this is imported correctly
